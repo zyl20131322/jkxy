@@ -1,0 +1,118 @@
+$border-color:#e4e4e4;
+$link-hover-color:#35b558;
+$normal-color:#555;
+@mixin link-colors($normal, $hover) {
+  color: $normal;
+  &:hover { color: $hover; }
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.wrapper{
+	min-width: 1150px;
+    position: relative;
+    header {
+	    height: 70px;
+	    width: 1000px;
+	    margin: 0 auto;
+	    img {
+		    width: 100px;
+		    margin-top: 15px;
+		    float: left;
+		    margin-right: 70px;
+		}
+		nav {
+		    float: left;
+		    width: 440px;
+		    display: inline-block;
+		    ul li {
+			    line-height: 69px;
+			    padding-right: 32px;
+			    text-decoration: none;
+			    font-size: 15px;
+			    float: left;
+			    cursor: pointer;
+			    position: relative;
+			    @include link-colors($normal-color,$link-hover-color);
+				 a {
+				    @include link-colors($normal-color,$link-hover-color);
+				}
+				.slide-submeu {
+				    position: absolute;
+				    left: 0;
+				    top: 69px;
+				    z-index: 1000;
+				    width: 200px;
+				    padding: 5px 0;
+				    background: #fff;
+				    border-top: 1px solid #E4E4E4;
+				    box-shadow: -1px 3px 5px rgba(000, 000, 000, 0.3);
+				    display: none;
+				}
+			}
+		}
+		.search {
+		    border: 1px solid $border-color;
+		    height: 32px;
+		    width: 230px;
+		    overflow: hidden;
+		    display: inline-block;
+		    float: left;
+		    margin-top: 20px;
+		    input {
+			    float: left;
+			    width: 190px;
+			    height: 30px;
+			    border: none;
+			    padding: 0px 8px;
+			    border-right: 1px solid $border-color;
+			    outline: none;
+			    font-size: 12px;
+			    display: inline-block;
+
+			}
+			.search-icon {
+			    width: 18px;
+			    height: 18px;
+			    float: right;
+			    margin-top: 6px;
+			    margin-right: 10px;
+			    display: inline-block;
+			    background: url(http://e.jikexueyuan.com/headerandfooter/images/icon.png) 0 0 no-repeat;
+			    background-position: 0 0;
+			    cursor: pointer;
+			}
+		}
+		.userinfo-notlogin {
+		    display: inline-block;
+		    float: right;
+		    font-size: 14px;
+		    a{
+		    @include link-colors($normal-color,$link-hover-color);
+		    }
+		    i {
+			    border-left: 1px solid #ccc;
+			    height: 15px;
+			    display: inline-block;
+			    float: left;
+			    overflow: hidden;
+			    margin-top: 27px;
+			}
+		}
+	}
+	.container {
+	    background-color: #f4f4f4;
+	    border-bottom: 1px solid $border-color;
+	    border-top: 1px solid $border-color;
+	}
+	footer {
+	    position: relative;
+	    font-size: 12px;
+	    background: #fff;
+	    box-sizing: border-box;
+	    padding: 20px 0;
+	}
+}
